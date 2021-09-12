@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Roboto&display=swap" rel="stylesheet">
+    <title>Tabela Imóveis</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./tabelas-1.css">
+    <link rel="stylesheet" href="./Formularios-1.2.css">
+    <script src="./jquery-3.6.0.js"></script>
+    <script src="./Validacao.js"></script>
+<head>
+
+<body>
+    <form name="dados" >
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">Formulário de Cadastro de Imóveis</th>
+                </tr>
+            </thead>
+
+            <tr>
+                <td><label id="idNomeLabel" runat="server">Nome do proprietário:</label></td>
+                <td><input id="idNome" name="proprietario"  size="20" type="text" required><br></td>
+            </tr>
+
+            <tr>
+                <td><label id="idAnoLabel">Ano de Construção:</label></td>
+                <td><input type="number" id="idAno" name="ano" placeholder="Selecione o ano de construção" size="20"
+                        min="1500" max="2021" required><br></td>
+            </tr>
+
+            <tr>
+                <td><label id="idDataLabel">Data de aquisição do imóvel:</label></td>
+                <td><input type="date" id="idData" name="data" size="20"></td>
+            </tr>
+
+            <tr>
+                <td><label id="idMunicipioLabel">Município:</label></td>
+                <td><select id="idMunicipio" name="municipio" required>
+                        <option value="0">Selecione uma opção...</option>
+                        <!-- <option value="1">Belo Horizonte</option>
+                        <option value="2">Gramado</option>
+                        <option value="3">Palmas</option>
+                        <option value="4">Formosa</option>
+                        <option value="5">Ilhéus</option>
+                        <option value="6">Varginha</option>
+                        <option value="7">Barbacena</option>
+                        <option value="8">Ubatuba</option>
+                        <option value="9">São Paulo</option>
+                        <option value="10">Bahia</option> -->
+                    </select></td>
+            </tr>
+
+            <tr>
+                <td><label id="idDiferencialLabel">Diferencial:</label></td>
+                <td id="idtddiferencial" class="alinhar-esquerda" >
+                    <input type="checkbox" class="diferencial" id="idDiferencial" name="diferencial" value="1">Área de lazer<br>
+                    <input type="checkbox" class="diferencial" id="idDiferencial" name="diferencial" value="2">Quintal grande<br>
+                    <input type="checkbox" class="diferencial" id="idDiferencial" name="diferencial" value="3">Suíte<br>
+                    <input type="checkbox" class="diferencial" id="idDiferencial" name="diferencial" value="4">Garagem mínimo dois carros
+                </td>
+            </tr>
+
+            <tr>
+                <td><label id="idTipoLabel">Tipo:</label></td>
+                <td class="alinhar-esquerda tipo" id="idtdtipo" >
+                    <input type="radio" class="tipo tipoImovel" id="idTipo" name="tipo" value="1">Novo<br>
+                    <input type="radio" class="tipo tipoImovel" id="idTipo" name="tipo" value="2">Usado<br>
+
+                </td>
+            </tr>
+
+            <tr id="idbotao">
+                <td align="middle" colspan="4"><button class="botao" type="button" onclick="cadastrar()">SALVAR</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <br>
+    
+    <!-- <table>
+        <thead>
+            <tr>
+                <th colspan="4">Tabela de Imóveis</th>
+            </tr>
+            <tr class="sub-titulo">
+                <th>Propietário</th>
+                <th class="numero">Ano De Construção</th>
+                <th>Município</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Mariana</td>
+                <td>1995</td>
+                <td>Barbacena</td>
+                <td>Usado</td>
+            </tr>
+
+            <tr>
+                <td>Henrique</td>
+                <td>2020</td>
+                <td>Varginha</td>
+                <td>Novo</td>
+            </tr>
+
+            <tr>
+                <td>Glícia</td>
+                <td>2017</td>
+                <td>Rio De Janeiro</td>
+                <td>Novo</td>
+            </tr>
+
+            <tr>
+                <td>Emília</td>
+                <td>1977</td>
+                <td>Ubatuba</td>
+                <td>Usado</td>
+            </tr>
+
+            <tr>
+                <td>Everton</td>
+                <td>2010</td>
+                <td>Divinopólis</td>
+                <td>Usado</td>
+            </tr>
+
+            <tr>
+                <td>Júliana</td>
+                <td>2019</td>
+                <td>Campo Grande</td>
+                <td>Novo</td>
+            </tr>
+
+            <tr>
+                <td>Marcos Vinícios</td>
+                <td>2021</td>
+                <td>São Paulo</td>
+                <td>Novo</td>
+            </tr>
+
+            <tr>
+                <td>Sandrielly</td>
+                <td>2008</td>
+                <td>Pernambuco</td>
+                <td>Usado</td>
+            </tr>
+
+            <tr>
+                <td>Mário Santos</td>
+                <td>1997</td>
+                <td>Belo Horizonte</td>
+                <td>Usado</td>
+            </tr>
+
+            <tr>
+                <td>Carlos Eduardo</td>
+                <td>2003</td>
+                <td>Bahia</td>
+                <td>Usado</td>
+            </tr>
+        </tbody>
+    </table> -->
+
+    <h1>Imoveis Cadastrados</h1> 
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>PROPIETARIO</th>
+                <th>ANO</th>
+                <th>MUNICIPIO</th>
+                <th>TIPO</th>
+                <th>AÇÕES</th>
+            </tr>
+        </thead>
+        <tbody id="grid">
+        </tbody >
+    </table>
+</body>
+
+</html>

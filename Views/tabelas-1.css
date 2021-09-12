@@ -1,0 +1,47 @@
+table {
+    font-family: fantasy;
+    font-size: 15px;
+    width: 700px;
+    height: 900x;
+    background-image: url(https://images.madeiramadeira.com.br/product/images/43711022-papel-de-parede-quarto-infantil-bobinex-renascer-fundo-casas-6202-704-1-600x600.jpg);
+    background-repeat: repeat;
+    background-color: rgb(238, 224, 229);
+}
+
+thead {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    color: rgb(36, 35, 35);
+    font-weight: bold;
+    background-color: rgb(0, 197, 205);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+   line-height: 50px;
+}
+
+td, th {
+    padding: 10px;
+}
+
+table, td, th {
+    border-style: solid;
+    border-color: rgb(156, 156, 156);
+    border-width: 4px;
+    border-spacing: 4px;
+    border-radius: 10px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(224, 255, 255);
+    color: rgb(139, 131, 134);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(238, 224, 229);
+    color: rgb(86, 161, 161);
+}
+
+td:nth-child(2) {
+    text-align: center;
+}

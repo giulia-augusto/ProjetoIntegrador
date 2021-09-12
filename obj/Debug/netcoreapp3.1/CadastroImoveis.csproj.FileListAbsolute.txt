@@ -1,0 +1,120 @@
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.exe
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.deps.json
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.json
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.dev.json
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfo.cs
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.RazorTargetAssemblyInfo.cache
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.Manifest.cache
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.xml
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.genruntimeconfig.cache
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\GiuliaADS\EXERCICIOS\DWS\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\scopedcss\bundle\CadastroImoveis.styles.css
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.exe
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.deps.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.dev.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csprojAssemblyReference.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfoInputs.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfo.cs
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csproj.CoreCompileInputs.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.RazorTargetAssemblyInfo.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.Manifest.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.xml
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.genruntimeconfig.cache
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.exe
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.deps.json
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.json
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.dev.json
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csproj.AssemblyReference.cache
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfoInputs.cache
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfo.cs
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.Manifest.cache
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.xml
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\scopedcss\bundle\CadastroImoveis.styles.css
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.RazorTargetAssemblyInfo.cache
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\usuario\Documents\test\trabalho1\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.genruntimeconfig.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.exe
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.deps.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.dev.json
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csprojAssemblyReference.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfoInputs.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfo.cs
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csproj.CoreCompileInputs.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.RazorTargetAssemblyInfo.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.Manifest.cache
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.xml
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\Maria Clara\Documents\Maria Clara\Unilavras\Período 3\Módulo 2\Projeto Integrador\WEB\entrega\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.genruntimeconfig.cache
+C:\Users\usuario\Documents\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\usuario\Documents\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\usuario\Documents\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.exe
+C:\Users\usuario\Documents\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.deps.json
+C:\Users\usuario\Documents\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.json
+C:\Users\usuario\Documents\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.dev.json
+C:\Users\usuario\Documents\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\usuario\Documents\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csproj.AssemblyReference.cache
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfoInputs.cache
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfo.cs
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.Manifest.cache
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.xml
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\scopedcss\bundle\CadastroImoveis.styles.css
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.RazorTargetAssemblyInfo.cache
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\usuario\Documents\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.genruntimeconfig.cache
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.exe
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.deps.json
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.json
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.runtimeconfig.dev.json
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\bin\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csproj.AssemblyReference.cache
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfoInputs.cache
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.AssemblyInfo.cs
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.Manifest.cache
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\staticwebassets\CadastroImoveis.StaticWebAssets.xml
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\scopedcss\bundle\CadastroImoveis.styles.css
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.RazorTargetAssemblyInfo.cache
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.dll
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.pdb
+C:\Users\usuario\Documents\projeto12_09\CadastroImoveis\obj\Debug\netcoreapp3.1\CadastroImoveis.genruntimeconfig.cache

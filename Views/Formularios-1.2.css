@@ -1,0 +1,116 @@
+.botao {
+    color: blue;
+    text-decoration: underline;
+    border: palevioletred solid 2.5px;
+    border-radius: 25px;
+    background-color: aquamarine;
+    height: 50px;
+    width: 200px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#idMunicipio {
+    font-style: oblique;
+}
+
+select option:nth-child(odd) {
+    background-color: rgb(224, 255, 255);
+}
+
+select option:nth-child(even) {
+    background-color: rgb(238, 224, 229);
+}
+
+#idEstado {
+    font-style: italic;
+}
+
+#idAno {
+    width: 200px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+thead {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+thead .sub-titulo{
+    font-size: 18px;
+    text-transform: initial;
+    line-height: 10px;
+    letter-spacing: 1px;
+}
+
+.botao:hover {
+    background-color: plum;
+    border-color: pink dashed 2.5px;
+    color: purple;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type=text], textarea, select {
+    width: 350px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-style: solid;
+    border-color: indigo;
+    border-width: 2.5px;
+    border-radius: 10px;
+}
+
+input[type=text]:focus, textarea:focus, select:focus {
+    border-color: hotpink;
+    outline: none;
+}
+
+input[type=number]:focus {
+    border-color: blue;
+    outline: none;
+}
+
+input[type=date]:focus {
+    border-color: darkturquoise;
+    outline: none;
+}
+
+input[type=text]:hover, textarea:hover, select:hover {
+    border-color: lightgreen;
+}
+
+table {
+    border-spacing: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.alinhar-esquerda {
+    text-align: left !important;
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tipo input {
+    cursor: pointer;
+} 
+
+.vermelho{
+    border-color: red !important;
+}
+
+.botao-tabela{
+    height: 35px !important;
+    width: 150px !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    letter-spacing: 1px !important;
+}
