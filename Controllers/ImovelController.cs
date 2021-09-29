@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using CadastroImoveis.Models;
 
 namespace CadastroImoveis.Controllers
@@ -13,41 +14,48 @@ namespace CadastroImoveis.Controllers
     public class ImovelController : ControllerBase
     {
         private readonly ILogger<ImovelController> _logger;
-        private List<Imovel> _imoveis = new List<Imovel>
-        {
-            new Imovel { IdImovel = 1, Proprietario = "Mariana", Ano = "1995", Municipio = new Municipio { IdMunicipio = 1, NomeMunicipio = "Barbacena" }, Tipo = "Usado" },
-            new Imovel { IdImovel = 2, Proprietario = "Henrique", Ano = "2020", Municipio = new Municipio { IdMunicipio = 2, NomeMunicipio = "Varginha" }, Tipo = "Novo" },
-            new Imovel { IdImovel = 3, Proprietario = "Glícia", Ano = "2017", Municipio = new Municipio { IdMunicipio = 3, NomeMunicipio = "Rio De Janeiro" }, Tipo = "Novo" },
-            new Imovel { IdImovel = 4, Proprietario = "Emília", Ano = "1977", Municipio = new Municipio { IdMunicipio = 4, NomeMunicipio = "Ubatuba" }, Tipo = "Usado" },
-            new Imovel { IdImovel = 5, Proprietario = "Everton", Ano = "2010", Municipio = new Municipio { IdMunicipio = 5, NomeMunicipio = "Divinopólis" }, Tipo = "Usado" },
-            new Imovel { IdImovel = 6, Proprietario = "Júliana", Ano = "2019", Municipio = new Municipio { IdMunicipio = 6, NomeMunicipio = "Campo Grande" }, Tipo = "Novo" },
-            new Imovel { IdImovel = 7, Proprietario = "Marcos Vinícios", Ano = "2021", Municipio = new Municipio { IdMunicipio = 7, NomeMunicipio = "São Paulo" }, Tipo = "Novo" },
-            new Imovel { IdImovel = 8, Proprietario = "Sandrielly", Ano = "2008", Municipio = new Municipio { IdMunicipio = 8, NomeMunicipio = "Pernambuco" }, Tipo = "Usado" },
-            new Imovel { IdImovel = 9, Proprietario = "Mário Santos", Ano = "1997", Municipio = new Municipio { IdMunicipio = 9, NomeMunicipio = "Belo Horizonte" }, Tipo = "Usado" },
-            new Imovel { IdImovel = 10, Proprietario = "Carlos Eduardo", Ano = "2003", Municipio = new Municipio { IdMunicipio = 10, NomeMunicipio = "Bahia" }, Tipo = "Usado" }
-        };
+        private BDContexto _contexto;
 
-        public ImovelController(ILogger<ImovelController> logger)
+        public ImovelController(ILogger<ImovelController> logger, BDContexto contexto)
         {
             _logger = logger;
+            _contexto = contexto;
         }
 
         [HttpGet]
         public List<Imovel> Listar()
         {
-            return _imoveis;
+            return _contexto.Imovel
+                .Include(c => c.IdMunicipioNavigation)
+                .OrderBy(c => c.CodImovel)
+                .Select(c => new Imovel 
+                { 
+                    CodImovel = c.CodImovel,
+                    Proprietario = c.Proprietario,
+                    Ano = c.Ano,
+                    DataAquisicao = c.DataAquisicao,
+                    Tipo = c.Tipo,
+                    IdMunicipioNavigation = new Municipio 
+                    { 
+                        IdMunicipio = c.IdMunicipioNavigation.IdMunicipio, 
+                        Nome = c.IdMunicipioNavigation.Nome,
+                        Populacao = c.IdMunicipioNavigation.Populacao,
+                        Estado = c.IdMunicipioNavigation.Estado, 
+                        Porte = c.IdMunicipioNavigation.Porte 
+                    } 
+                }).ToList();
         }
 
         [HttpGet]
-        public Imovel Consultar(int idImovel)
+        public Imovel Consultar(int CodImovel)
         {
-            for (int i = 0; i < _imoveis.Count; i++)
-            {
-                if (_imoveis[i].IdImovel == idImovel) 
-                {
-                    return _imoveis[i];
-                }
-            }
+            // for (int i = 0; i < _imoveis.Count; i++)
+            // {
+            //     if (_imoveis[i].CodImovel == CodImovel) 
+            //     {
+            //         return _imoveis[i];
+            //     }
+            // }
 
             return null;
         }
@@ -55,7 +63,7 @@ namespace CadastroImoveis.Controllers
         [HttpPost]
         public string Cadastrar([FromBody] Imovel novoImovel)
         {
-            _imoveis.Add(novoImovel);
+            // _imoveis.Add(novoImovel);
             return "Imóvel cadastrado com sucesso!";
         }
 
@@ -66,7 +74,7 @@ namespace CadastroImoveis.Controllers
         }
 
         [HttpDelete]
-        public string Deletar([FromBody] int idImovel) 
+        public string Deletar([FromBody] int CodImovel) 
         {
             return "Imóvel deletado com sucesso!";
         }
