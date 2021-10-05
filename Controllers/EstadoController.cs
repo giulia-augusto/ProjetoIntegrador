@@ -26,22 +26,14 @@ namespace CadastroImoveis.Controllers
         [HttpGet]
         public List<Estado> Listar()
         {
-            // return _contexto.Estado
-            //     .OrderBy(c => c.IdMunicipio)
-            //     .Select(c => new Municipio 
-            //     { 
-            //         IdMunicipio = c.IdMunicipioNavigation.Id, 
-            //         Nome = c.IdMunicipioNavigation.Nome,
-            //         Populacao = c.IdMunicipioNavigation.Populacao,
-            //         Estado = c.IdMunicipioNavigation.Estado, 
-            //         Porte = c.IdMunicipioNavigation.Porte 
-            //     }).ToList();
-                return null;
-
-          
+            return _contexto.Estado
+                .OrderBy(c => c.Id)
+                .Select(c => new Estado 
+                { 
+                    Id = c.Id, 
+                    Nome = c.Nome
+                }).ToList();
         }
-
-        
     
    }
 }

@@ -40,24 +40,18 @@ namespace CadastroImoveis.Controllers
                         IdMunicipio = c.IdMunicipioNavigation.IdMunicipio, 
                         Nome = c.IdMunicipioNavigation.Nome,
                         Populacao = c.IdMunicipioNavigation.Populacao,
-                        Estado = c.IdMunicipioNavigation.Estado, 
+                      //  Estado = c.IdMunicipioNavigation.Estado.IdEstadoNavigation.Nome, 
                         Porte = c.IdMunicipioNavigation.Porte 
                     } 
                 }).ToList();
         }
 
-        [HttpGet]
+        [HttpGet("{CodImovel}")]
         public Imovel Consultar(int CodImovel)
         {
-            // for (int i = 0; i < _imoveis.Count; i++)
-            // {
-            //     if (_imoveis[i].CodImovel == CodImovel) 
-            //     {
-            //         return _imoveis[i];
-            //     }
-            // }
+            return _contexto.Imovel
+                .FirstOrDefault(c => c.CodImovel == CodImovel);
 
-            return null;
         }
 
         [HttpPost]

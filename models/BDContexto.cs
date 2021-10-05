@@ -16,6 +16,7 @@ namespace CadastroImoveis.Models
         }
 
         public virtual DbSet<Diferencial> Diferencial { get; set; }
+        public virtual DbSet<Estado> Estado { get; set; }
         public virtual DbSet<Imovel> Imovel { get; set; }
         public virtual DbSet<ImovelDiferencial> ImovelDiferencial { get; set; }
         public virtual DbSet<Municipio> Municipio { get; set; }
@@ -43,7 +44,19 @@ namespace CadastroImoveis.Models
                 entity.Property(e => e.Nome)
                     .IsRequired()
                     .HasColumnName("nome")
-                    .HasColumnType("enum('Área de lazer','Quintal grande','Suíte','Garagem mínimo dois carros')");
+                    .HasMaxLength(30);
+            });
+
+            modelBuilder.Entity<Estado>(entity =>
+            {
+                entity.ToTable("estado");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Nome)
+                    .IsRequired()
+                    .HasColumnName("nome")
+                    .HasMaxLength(30);
             });
 
             modelBuilder.Entity<Imovel>(entity =>
@@ -119,12 +132,12 @@ namespace CadastroImoveis.Models
 
                 entity.ToTable("municipio");
 
+                entity.HasIndex(e => e.IdEstado)
+                    .HasName("idEstado");
+
                 entity.Property(e => e.IdMunicipio).HasColumnName("idMunicipio");
 
-                entity.Property(e => e.Estado)
-                    .IsRequired()
-                    .HasColumnName("estado")
-                    .HasColumnType("enum('Acre (AC)','Alagoas (AL)','Amapá (AP)','Amazonas (AM)','Bahia (BA)','Ceará (CE)','Distrito Federal (DF)','Espírito Santo (ES)','Goiás (GO)','Maranhão (MA)','Mato Grosso (MT)','Mato Grosso do Sul (MS)','Minas Gerais (MG)','Pará (PA)','Paraíba (PB)','Paraná (PR)','Pernambuco (PE)','Piauí (PI)','Rio de Janeiro (RJ)','Rio Grande do Norte (RN)','Rio Grande do Sul (RS)','Rondônia (RO)','Roraima (RR)','Santa Catarina (SC)','São Paulo (SP)','Sergipe (SE)','Tocantins (TO)')");
+                entity.Property(e => e.IdEstado).HasColumnName("idEstado");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
@@ -137,6 +150,12 @@ namespace CadastroImoveis.Models
                     .IsRequired()
                     .HasColumnName("porte")
                     .HasColumnType("enum('Metrópole','Grande','Médio','Pequeno')");
+
+                entity.HasOne(d => d.IdEstadoNavigation)
+                    .WithMany(p => p.Municipio)
+                    .HasForeignKey(d => d.IdEstado)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("municipio_ibfk_1");
             });
 
             OnModelCreatingPartial(modelBuilder);

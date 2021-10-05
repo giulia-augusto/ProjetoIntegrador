@@ -22,18 +22,12 @@ namespace CadastroImoveis.Controllers
             _contexto = contexto;
         }
 
-        [HttpGet]
+        [HttpGet("{IdMunicipio}")]
         public Municipio Consultar(int IdMunicipio)
         {
-            // for (int i = 0; i< _municipios.Count; i++)
-            // {
-            //     if (_municipios[i].IdMunicipio == IdMunicipio)
-            //     {
-            //         return _municipios[i];
-            //     }
-            // }
-            return null;
-
+            return _contexto.Municipio
+                .FirstOrDefault(c => c.IdMunicipio == IdMunicipio);
+            
         }
 
         [HttpGet]
@@ -46,7 +40,7 @@ namespace CadastroImoveis.Controllers
                     IdMunicipio = c.IdMunicipio, 
                     Nome = c.Nome,
                     Populacao = c.Populacao,
-                    Estado = c.Estado, 
+                   // Estado = c.Estado, 
                     Porte = c.Porte 
                 }).ToList();
         }
@@ -55,22 +49,13 @@ namespace CadastroImoveis.Controllers
         // [Route("municipio-imovel")]
         public List<Municipio> Listar2()
         {
-        //    List<Municipio> municipios = new List<Municipio>
-        //     {
-        //         new Municipio { IdMunicipio = 1, Nome = "Belo Horizonte" },
-        //         new Municipio { IdMunicipio = 2, Nome = "Gramado" },
-        //         new Municipio { IdMunicipio = 3, Nome = "Palmas" },
-        //         new Municipio { IdMunicipio = 4, Nome = "Formosa" },
-        //         new Municipio { IdMunicipio = 5, Nome = "Ilhéus" },
-        //         new Municipio { IdMunicipio = 6, Nome = "Varginha" },
-        //         new Municipio { IdMunicipio = 7, Nome = "Barbacena" },
-        //         new Municipio { IdMunicipio = 8, Nome = "Ubatuba" },
-        //         new Municipio { IdMunicipio = 9, Nome = "São Paulo" },
-        //         new Municipio { IdMunicipio = 10, Nome = "Bahia" }
-        //     };
-
-        //     return municipios;
-            return null;
+            return _contexto.Municipio
+                .OrderBy(c => c.IdMunicipio)
+                .Select(c => new Municipio 
+                { 
+                    IdMunicipio = c.IdMunicipio, 
+                    Nome = c.Nome
+                }).ToList();
         }
 
         [HttpPost]

@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
+using Microsoft.EntityFrameworkCore;
+using CadastroImoveis.Models;
 namespace CadastroImoveis
 {
     public class Startup
@@ -26,6 +28,9 @@ namespace CadastroImoveis
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<BDContexto>(option =>
+                option.UseMySQL("server=localhost;port=3306;user=root;password=root;database=imobiliaria")
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
