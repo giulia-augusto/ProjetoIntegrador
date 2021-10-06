@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using CadastroImoveis.Models;
+using CadastroImoveis.Dtos;
 
 namespace CadastroImoveis.Controllers
 {
@@ -23,35 +24,52 @@ namespace CadastroImoveis.Controllers
         }
 
         [HttpGet]
-        public List<Imovel> Listar()
+        public List<ImovelDTO> Listar()
         {
             return _contexto.Imovel
                 .Include(c => c.IdMunicipioNavigation)
                 .OrderBy(c => c.CodImovel)
-                .Select(c => new Imovel 
+                .Select(c => new ImovelDTO 
                 { 
                     CodImovel = c.CodImovel,
                     Proprietario = c.Proprietario,
                     Ano = c.Ano,
                     DataAquisicao = c.DataAquisicao,
                     Tipo = c.Tipo,
-                    IdMunicipioNavigation = new Municipio 
+                    Municipio = new MunicipioDTO
                     { 
                         IdMunicipio = c.IdMunicipioNavigation.IdMunicipio, 
-                        Nome = c.IdMunicipioNavigation.Nome,
-                        Populacao = c.IdMunicipioNavigation.Populacao,
-                      //  Estado = c.IdMunicipioNavigation.Estado.IdEstadoNavigation.Nome, 
-                        Porte = c.IdMunicipioNavigation.Porte 
+                        Nome = c.IdMunicipioNavigation.Nome
                     } 
                 }).ToList();
         }
 
         [HttpGet("{CodImovel}")]
-        public Imovel Consultar(int CodImovel)
+        public ImovelDTO Consultar(int CodImovel)
         {
-            return _contexto.Imovel
+            var imovel =  _contexto.Imovel
+                .Include(c => c.IdMunicipioNavigation)
                 .FirstOrDefault(c => c.CodImovel == CodImovel);
-
+            if (imovel == null)
+            {
+                return null;
+            }
+            else
+            {
+                return new ImovelDTO 
+                { 
+                    CodImovel = imovel.CodImovel,
+                    Proprietario = imovel.Proprietario,
+                    Ano = imovel.Ano,
+                    DataAquisicao = imovel.DataAquisicao,
+                    Tipo = imovel.Tipo,
+                    Municipio = new MunicipioDTO
+                    { 
+                        IdMunicipio = imovel.IdMunicipioNavigation.IdMunicipio, 
+                        Nome = imovel.IdMunicipioNavigation.Nome
+                    } 
+                };
+            }    
         }
 
         [HttpPost]

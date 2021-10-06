@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using CadastroImoveis.Models;
+using CadastroImoveis.Dtos;
 
 namespace CadastroImoveis.Controllers
 {
@@ -23,25 +24,50 @@ namespace CadastroImoveis.Controllers
         }
 
         [HttpGet("{IdMunicipio}")]
-        public Municipio Consultar(int IdMunicipio)
+        public MunicipioDTO Consultar(int IdMunicipio)
         {
-            return _contexto.Municipio
+            var municipio = _contexto.Municipio
+                .Include(c => c.IdEstadoNavigation)
                 .FirstOrDefault(c => c.IdMunicipio == IdMunicipio);
             
+            if (municipio == null)
+            {
+                return null;
+            }
+            else
+            {
+                return new MunicipioDTO 
+                { 
+                    IdMunicipio = municipio.IdMunicipio, 
+                    Nome = municipio.Nome,
+                    Populacao = municipio.Populacao,
+                    Porte = municipio.Porte,
+                    Estado = new EstadoDTO
+                    {
+                        Id = municipio.IdEstadoNavigation.Id,
+                        Nome = municipio.IdEstadoNavigation.Nome
+                    }
+                };
+            }
         }
 
         [HttpGet]
-        public List<Municipio> Listar()
+        public List<MunicipioDTO> Listar()
         {
             return _contexto.Municipio
+                .Include(c => c.IdEstadoNavigation)
                 .OrderBy(c => c.IdMunicipio)
-                .Select(c => new Municipio 
+                .Select(c => new MunicipioDTO 
                 { 
                     IdMunicipio = c.IdMunicipio, 
                     Nome = c.Nome,
                     Populacao = c.Populacao,
-                   // Estado = c.Estado, 
-                    Porte = c.Porte 
+                    Porte = c.Porte,
+                    Estado = new EstadoDTO
+                    {
+                        Id = c.IdEstadoNavigation.Id,
+                        Nome = c.IdEstadoNavigation.Nome
+                    }
                 }).ToList();
         }
 

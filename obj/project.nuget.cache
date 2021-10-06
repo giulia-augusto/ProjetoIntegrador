@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sAKm7qJXPxRIaIt/0e1dUPNUKS+RtP7f+uc7IiheHQdxWojvg4nL1hiShxBwA/alNMT+rhAkKWUNuQIhk6JOiQ==",
+  "dgSpecHash": "QPkuC2PbZaYhRANA6nhj/sUWxbKY4CWSV4wEOWtEaiFV1HnNuqTAFHxiq3hRgOV2tdf6I/YVQrE8W6vHS5IjuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usuario\\Desktop\\Nova pasta (3)\\ProjetoIntegrador\\CadastroImoveis.csproj",
+  "projectFilePath": "C:\\Users\\usuario\\Desktop\\Projeto3\\ProjetoIntegrador\\CadastroImoveis.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usuario\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",

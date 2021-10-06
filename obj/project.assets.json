@@ -6175,11 +6175,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Nova pasta (3)\\ProjetoIntegrador\\CadastroImoveis.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Projeto3\\ProjetoIntegrador\\CadastroImoveis.csproj",
       "projectName": "CadastroImoveis",
-      "projectPath": "C:\\Users\\usuario\\Desktop\\Nova pasta (3)\\ProjetoIntegrador\\CadastroImoveis.csproj",
+      "projectPath": "C:\\Users\\usuario\\Desktop\\Projeto3\\ProjetoIntegrador\\CadastroImoveis.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuario\\Desktop\\Nova pasta (3)\\ProjetoIntegrador\\obj\\",
+      "outputPath": "C:\\Users\\usuario\\Desktop\\Projeto3\\ProjetoIntegrador\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
