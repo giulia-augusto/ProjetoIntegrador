@@ -44,12 +44,12 @@ namespace CadastroImoveis.Controllers
                 }).ToList();
         }
 
-        [HttpGet("{CodImovel}")]
-        public ImovelDTO Consultar(int CodImovel)
+        [HttpGet("{codImovel}")]
+        public ImovelDTO Consultar([FromRoute] int codImovel)
         {
             var imovel =  _contexto.Imovel
                 .Include(c => c.IdMunicipioNavigation)
-                .FirstOrDefault(c => c.CodImovel == CodImovel);
+                .FirstOrDefault(c => c.CodImovel == codImovel);
             if (imovel == null)
             {
                 return null;
@@ -73,9 +73,9 @@ namespace CadastroImoveis.Controllers
         }
 
         [HttpPost]
-        public string Cadastrar([FromBody] Imovel novoImovel)
+        public string Cadastrar([FromBody] ImovelDTO novoImovel)
         {
-            // _imoveis.Add(novoImovel);
+             //_contexto.Add(novoImovel);
             return "Imóvel cadastrado com sucesso!";
         }
 

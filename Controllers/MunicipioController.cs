@@ -23,12 +23,12 @@ namespace CadastroImoveis.Controllers
             _contexto = contexto;
         }
 
-        [HttpGet("{IdMunicipio}")]
-        public MunicipioDTO Consultar(int IdMunicipio)
+        [HttpGet("{idMunicipio}")]
+        public MunicipioDTO Consultar([FromRoute] int idMunicipio)
         {
             var municipio = _contexto.Municipio
                 .Include(c => c.IdEstadoNavigation)
-                .FirstOrDefault(c => c.IdMunicipio == IdMunicipio);
+                .FirstOrDefault(c => c.IdMunicipio == idMunicipio);
             
             if (municipio == null)
             {
@@ -85,7 +85,7 @@ namespace CadastroImoveis.Controllers
         }
 
         [HttpPost]
-        public string Cadastrar([FromBody] Municipio novoMunicipio)
+        public string Cadastrar([FromBody] MunicipioDTO novoMunicipio)
         {
             // _municipios.Add(novoMunicipio);
             return "Município cadastrado com sucesso!";

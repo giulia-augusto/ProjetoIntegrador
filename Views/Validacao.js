@@ -9,15 +9,16 @@ function cadastrar() {
 
   let imovel = {
     proprietario : dados.proprietario.value,
-    ano: dados.ano.value,
-    data: dados.data.value,
+    ano: +dados.ano.value,
+    dataAquisicao: dados.data.value,
     municipio: {
-      id: parseInt(dados.municipio.value)
+      idMunicipio: parseInt(dados.municipio.value)
     },
-    tipo: toString(dados.tipo.value)
+    tipo:dados.tipo.value
   };
-
+  console.log(dados.tipo);
   if (successo) {
+  console.log(imovel);
   
     $.ajax({
       type:'POST',
@@ -26,6 +27,7 @@ function cadastrar() {
       data: JSON.stringify(imovel),
       success: function(resposta) {
         alert(resposta);
+        console.log(resposta);
       },
       error: function(erro, mensagem, excecao) {
         alert('deu errado');
@@ -39,7 +41,7 @@ function listarMunicipio()
   $.get('https://localhost:5001/api/Municipio/Listar2')
   .done(function(resposta) {
     for (i = 0; i < resposta.length; i++) {
-      let option =  $('<option></option>').val(resposta[i].idMunicipio).html(resposta[i].nomeMunicipio);
+      let option =  $('<option></option>').val(resposta[i].idMunicipio).html(resposta[i].nome);
       $('#idMunicipio').append(option);
     }
   })
@@ -55,7 +57,7 @@ function grid() {
     for (i = 0; i< resposta.length; i++) {
       let linha = $('<tr></tr>');
 
-      let celulaId = $('<td></td>').html(resposta[i].idImovel);
+      let celulaId = $('<td></td>').html(resposta[i].codImovel);
       linha.append(celulaId);
 
       let celulaProprietario = $('<td></td>').html(resposta[i].proprietario);
@@ -64,7 +66,7 @@ function grid() {
       let celulaAno = $('<td></td>').html(resposta[i].ano);
       linha.append(celulaAno);
 
-      let celulaMunicipio = $('<td></td>').html(resposta[i].municipio.nomeMunicipio);
+      let celulaMunicipio = $('<td></td>').html(resposta[i].municipio.nome);
       linha.append(celulaMunicipio);
 
       let celulaTipo = $('<td></td>').html(resposta[i].tipo);
@@ -72,10 +74,10 @@ function grid() {
 
       let celulaAcoes = $('<td></td>');
 
-      let botaoVizualizar =$('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('vizualizar').attr('onclick', 'vizualizar(' + resposta[i].idImovel +')');
+      let botaoVizualizar =$('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('vizualizar').attr('onclick', 'vizualizar(' + resposta[i].codImovel +')');
       celulaAcoes.append(botaoVizualizar);
 
-      let botaoExcluir = $('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('Deletar').attr('onclick', 'excluir(' + resposta[i].idImovel +')');
+      let botaoExcluir = $('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('Deletar').attr('onclick', 'excluir(' + resposta[i].codImovel +')');
       celulaAcoes.append('  '); 
       celulaAcoes.append(botaoExcluir);
 
@@ -90,12 +92,12 @@ function grid() {
 }
 
 function vizualizar(id) {
-  $.get('https://localhost:5001/api/Imovel/Consultar?idImovel=' + id)
+  $.get('https://localhost:5001/api/Imovel/Consultar/' + id)
   .done(function(resposta){
-    let vizualizacao = resposta.idImovel + '\n';
+    let vizualizacao = resposta.codImovel + '\n';
     vizualizacao += resposta.proprietario + '\n';
     vizualizacao += resposta.ano + '\n';
-    vizualizacao += resposta.municipio.nomeMunicipio + '\n';
+    vizualizacao += resposta.municipio.nome + '\n';
     vizualizacao += resposta.tipo + '\n';
     
     alert(vizualizacao);

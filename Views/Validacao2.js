@@ -8,14 +8,14 @@ function cadastrar() {
   let successo = validarFormulario2();
 
   let municipio = {
-    municipio : dados.nomeMunicipio.value,
-    populacao: dados.populacao.value,
+    nome : dados.nome.value,
+    populacao: +dados.populacao.value,
     estado: {
       id: parseInt(dados.estado.value)
     },
-    porte: toString(dados.porte.value)
+    porte: dados.porte.value
   };
-
+  console.log(municipio);
   if (successo) {
     $.ajax({
       type:'POST',
@@ -56,8 +56,8 @@ function grid() {
       let celulaIdMunicipio = $('<td></td>').html(resposta[i].idMunicipio);
       linha.append(celulaIdMunicipio);
 
-      let celulaNomeMunicipio = $('<td></td>').html(resposta[i].nomeMunicipio);
-      linha.append(celulaNomeMunicipio);
+      let celulanome = $('<td></td>').html(resposta[i].nome);
+      linha.append(celulanome);
 
       let celulaPopulacao = $('<td></td>').html(resposta[i].populacao);
       linha.append(celulaPopulacao);
@@ -88,10 +88,10 @@ function grid() {
 }
 
 function vizualizar(idMunicipio) {
-  $.get('https://localhost:5001/api/Municipio/Consultar?idMunicipio=' + idMunicipio)
+  $.get('https://localhost:5001/api/Municipio/Consultar/' + idMunicipio)
   .done(function(resposta){
     let vizualizacao = resposta.idMunicipio + '\n';
-    vizualizacao += resposta.nomeMunicipio + '\n';
+    vizualizacao += resposta.nome + '\n';
     vizualizacao += resposta.populacao + '\n';
     vizualizacao += resposta.estado.nome + '\n';
     vizualizacao += resposta.porte + '\n';
@@ -119,13 +119,13 @@ function excluir(IdMunicipio) {
 }
 
 function validarFormulario2(){
-  var nomeMunicipioEhValido = validarNomeMunicipio();
+  var nomeEhValido = validarnome();
   var populacaoEhValido = validarPopulacao();
   var estadoEhValido = validarEstado();
   var porteEhValido = validarPorte();
 
 
-  if (nomeMunicipioEhValido == true && populacaoEhValido == true && estadoEhValido == true && 
+  if (nomeEhValido == true && populacaoEhValido == true && estadoEhValido == true && 
     porteEhValido == true)
   {
     return true;
@@ -135,7 +135,7 @@ function validarFormulario2(){
   }
 }
 
-function validarNomeMunicipio(){
+function validarnome(){
   if ($('#idNome').val() == null || $('#idNome').val() == "") {
     $('#idNome').addClass('vermelho');
     alert("Preencha o campo: " + $('#idNomeMlabel').text().replace(':', ''));
