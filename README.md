@@ -7,6 +7,10 @@ No projeto fizemos duas tabelas com opções para o cadastro de imoveis e munic�
 - C# com .NET 
 - HTML, CSS e JavaScript
 - jQuery
+- MySQL
+- MVC
+- EF Core
+- Lambda e Linq
 
 ## Colaboradores:
 - Giulia Augusto
