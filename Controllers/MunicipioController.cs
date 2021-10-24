@@ -85,9 +85,10 @@ namespace CadastroImoveis.Controllers
         }
 
         [HttpPost]
-        public string Cadastrar([FromBody] MunicipioDTO novoMunicipio)
+        public string Cadastrar([FromBody] Municipio dados)
         {
-            // _municipios.Add(novoMunicipio);
+            _contexto.Add(dados);
+            _contexto.SaveChanges();
             return "Município cadastrado com sucesso!";
         }
 
@@ -97,12 +98,24 @@ namespace CadastroImoveis.Controllers
             return "Município alterado com sucessso";
         }
 
-        [HttpDelete]
-        public string Deletar([FromBody] int IdMunicipio)
-        {
-            return "Município deletado com sucesso!";
-        }
 
+        [HttpDelete]
+        public string Excluir([FromBody] int IdMunicipio) 
+        {
+            Municipio dados = _contexto.Municipio.FirstOrDefault(p => p.IdMunicipio == IdMunicipio);
+             if (dados == null)
+            {
+                return "Não foi encontrado Município para o ID informado!";
+            }
+            else
+            {
+                _contexto.Remove(dados);
+                _contexto.SaveChanges();
+            
+                return "Município deletado com sucesso!";
+            }
+        }
+    }   
         
-    }
+ 
 }

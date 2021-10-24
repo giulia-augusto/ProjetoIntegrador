@@ -2,6 +2,7 @@
 $(document).ready(function(){
   listarMunicipio();
   grid();
+
 });
 
 function cadastrar() {
@@ -11,9 +12,7 @@ function cadastrar() {
     proprietario : dados.proprietario.value,
     ano: +dados.ano.value,
     dataAquisicao: dados.data.value,
-    municipio: {
-      idMunicipio: parseInt(dados.municipio.value)
-    },
+    idMunicipio: +dados.municipio.value,
     tipo:dados.tipo.value
   };
   console.log(dados.tipo);
@@ -30,7 +29,7 @@ function cadastrar() {
         console.log(resposta);
       },
       error: function(erro, mensagem, excecao) {
-        alert('deu errado');
+        alert('deu errado',erro, mensagem, excecao);
       }
     });
   }
@@ -107,12 +106,12 @@ function vizualizar(id) {
   });
 }
 
-function excluir(id) {
+function excluir(codImovel) {
   $.ajax({
     type: 'DELETE',
-    url: 'https://localhost:5001/api/Imovel/Deletar',
+    url: 'https://localhost:5001/api/Imovel/Excluir',
     contentType: 'application/json; charset=utf-8',
-    data: JSON.stringify(id),
+    data: JSON.stringify(codImovel),
     success: function(resposta) {
       alert(resposta);
     },
@@ -209,3 +208,6 @@ function validarTipo(){
   alert("Preencha o campo: " + $('#idTipoLabel').text().replace(':', ''));
   return false;
 }
+
+
+

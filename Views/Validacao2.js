@@ -2,6 +2,7 @@
 $(document).ready(function(){
   listarEstado();
   grid();
+ 
 });
 
 function cadastrar() {
@@ -10,9 +11,7 @@ function cadastrar() {
   let municipio = {
     nome : dados.nome.value,
     populacao: +dados.populacao.value,
-    estado: {
-      id: parseInt(dados.estado.value)
-    },
+    idEstado: +dados.estado.value,
     porte: dados.porte.value
   };
   console.log(municipio);
@@ -104,9 +103,10 @@ function vizualizar(idMunicipio) {
 }
 
 function excluir(IdMunicipio) {
+  console.log(IdMunicipio);
   $.ajax({
     type: 'DELETE',
-    url: 'https://localhost:5001/api/Municipio/Deletar',
+    url: 'https://localhost:5001/api/Municipio/Excluir',
     contentType: 'application/json; charset=utf-8',
     data: JSON.stringify(IdMunicipio),
     success: function(resposta) {
@@ -181,3 +181,4 @@ function validarPorte(){
   alert("Preencha o campo: " + $('#idportelabel').text().replace(':', ''));
   return false;
 }
+

@@ -73,9 +73,10 @@ namespace CadastroImoveis.Controllers
         }
 
         [HttpPost]
-        public string Cadastrar([FromBody] ImovelDTO novoImovel)
+        public string Cadastrar([FromBody] Imovel dados)
         {
-             //_contexto.Add(novoImovel);
+            _contexto.Imovel.Add(dados);
+            _contexto.SaveChanges();
             return "Imóvel cadastrado com sucesso!";
         }
 
@@ -86,9 +87,20 @@ namespace CadastroImoveis.Controllers
         }
 
         [HttpDelete]
-        public string Deletar([FromBody] int CodImovel) 
+        public string Excluir([FromBody] int CodImovel) 
         {
-            return "Imóvel deletado com sucesso!";
+            Imovel dados = _contexto.Imovel.FirstOrDefault(p => p.CodImovel == CodImovel);
+             if (dados == null)
+            {
+                return "Não foi encontrado imovel para o ID informado!";
+            }
+            else
+            {
+                _contexto.Remove(dados);
+                _contexto.SaveChanges();
+            
+                return "Imóvel deletado com sucesso!";
+            }
         }
-    }
+    }   
 }
