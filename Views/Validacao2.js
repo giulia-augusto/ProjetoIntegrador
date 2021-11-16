@@ -14,20 +14,10 @@ function cadastrar() {
     idEstado: +dados.estado.value,
     porte: dados.porte.value
   };
-  console.log(municipio);
+  
   if (successo) {
-    $.ajax({
-      type:'POST',
-      url: 'https://localhost:5001/api/Municipio/Cadastrar',
-      contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify(municipio),
-      success: function(resposta) {
-        alert(resposta);
-      },
-      error: function(erro, mensagem, excecao) {
-        alert('Deu errado');
-      }
-    });
+    salvar();
+  
   }
 }
 
@@ -47,8 +37,8 @@ function listarEstado()
 
 function grid() {
   $.get('https://localhost:5001/api/Municipio/Listar')
-  .done(function(resposta)
-  {
+  .done(function(resposta) {
+    $('#gridMunicipios').children().remove();
     for (i = 0; i< resposta.length; i++) {
       let linha = $('<tr></tr>');
 
@@ -69,12 +59,16 @@ function grid() {
 
       let celulaAcoes = $('<td></td>');
 
-      let botaoVizualizar =$('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('vizualizar').attr('onclick', 'vizualizar(' + resposta[i].idMunicipio +')');
+      let botaoVizualizar =$('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('Visualizar').attr('onclick', 'vizualizar(' + resposta[i].idMunicipio +')');
       celulaAcoes.append(botaoVizualizar);
 
       let botaoExcluir = $('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('Deletar').attr('onclick', 'excluir(' + resposta[i].idMunicipio +')');
       celulaAcoes.append('  '); 
       celulaAcoes.append(botaoExcluir);
+
+      let botaoAlterar = $('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('Alterar').attr('onclick', 'editar(' + resposta[i].idMunicipio +')');
+      celulaAcoes.append('  '); 
+      celulaAcoes.append(botaoAlterar);
 
       linha.append(celulaAcoes);
 
@@ -102,14 +96,14 @@ function vizualizar(idMunicipio) {
   });
 }
 
-function excluir(IdMunicipio) {
-  console.log(IdMunicipio);
+function excluir(idMunicipio) {
   $.ajax({
     type: 'DELETE',
     url: 'https://localhost:5001/api/Municipio/Excluir',
     contentType: 'application/json; charset=utf-8',
-    data: JSON.stringify(IdMunicipio),
+    data: JSON.stringify(idMunicipio),
     success: function(resposta) {
+      grid();
       alert(resposta);
     },
     error: function(erro, mensagem, excecao) {
@@ -181,4 +175,84 @@ function validarPorte(){
   alert("Preencha o campo: " + $('#idportelabel').text().replace(':', ''));
   return false;
 }
+
+function obterPorte(porte){
+  switch (porte){
+    case 'Metrópole': return 1;
+    case 'Grande': return 2;
+    case 'Médio': return 3;
+    case 'Pequeno': return 4;
+    default: return 0;
+  }
+}
+
+function editar(idMunicipio){
+  $.get('https://localhost:5001/api/Municipio/Visualizar?idMunicipio='+idMunicipio)
+      .done(function(resposta) { 
+        console.log(resposta);
+          $('#idMunicipio').val(resposta.idMunicipio);
+          $('#idNome').val(resposta.nome);
+          $('#idPopulacao').val(resposta.populacao);
+          $('input:radio[name="porte"]').filter(`[value="${obterPorte(resposta.porte)}"]`).attr('checked', true);
+          $('#idEstado').val(resposta.estado.id);
+          $('#salvar span').text('Editar');
+
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+      })
+      .fail(function(erro, mensagem, excecao) { 
+          alert(mensagem + ': ' + excecao);
+      });
+}
+
+function salvar(){
+
+  var id;
+  var url;
+  var metodo;
+  if ($('#salvar span')[0].textContent === 'Editar'){
+      id = +$('#idMunicipio').val();
+      metodo = 'PUT';
+      url = 'https://localhost:5001/api/Municipio/Alterar';
+  }
+  else{
+      id = 0;
+      metodo = 'POST';
+      url = 'https://localhost:5001/api/Municipio/Cadastrar';
+  }
+ 
+let municipio = {
+    idMunicipio : id,
+    nome : dados.nome.value,
+    populacao: +dados.populacao.value,
+    idEstado: +dados.estado.value,
+    porte: dados.porte.value
+  };
+  
+
+  $.ajax({
+      type: metodo,
+      url: url,
+      contentType: "application/json; charset=utf-8",
+      data: JSON.stringify(municipio),
+      success: function(resposta) { 
+        limparFormulario();  
+        grid();
+        alert(resposta);
+      },
+      error: function(erro, mensagem, excecao) { 
+          alert(mensagem + ': ' + excecao);
+      }
+  });
+}
+
+function limparFormulario(){
+  $('#idMunicipio').val('');
+  $('#idNome').val('');
+  $('#idPopulacao').val('');
+  $('#idEstado').val(0);
+  $('#salvar span').text('Salvar');
+}
+
+
 

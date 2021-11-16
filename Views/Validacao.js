@@ -15,23 +15,10 @@ function cadastrar() {
     idMunicipio: +dados.municipio.value,
     tipo:dados.tipo.value
   };
-  console.log(dados.tipo);
-  if (successo) {
-  console.log(imovel);
   
-    $.ajax({
-      type:'POST',
-      url: 'https://localhost:5001/api/Imovel/Cadastrar',
-      contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify(imovel),
-      success: function(resposta) {
-        alert(resposta);
-        console.log(resposta);
-      },
-      error: function(erro, mensagem, excecao) {
-        alert('deu errado',erro, mensagem, excecao);
-      }
-    });
+  if (successo) {
+    salvar();
+    
   }
 }
 
@@ -51,8 +38,8 @@ function listarMunicipio()
 
 function grid() {
   $.get('https://localhost:5001/api/Imovel/Listar')
-  .done(function(resposta)
-  {
+  .done(function(resposta) {
+    $('#grid').children().remove();
     for (i = 0; i< resposta.length; i++) {
       let linha = $('<tr></tr>');
 
@@ -73,12 +60,16 @@ function grid() {
 
       let celulaAcoes = $('<td></td>');
 
-      let botaoVizualizar =$('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('vizualizar').attr('onclick', 'vizualizar(' + resposta[i].codImovel +')');
+      let botaoVizualizar =$('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('Visualizar').attr('onclick', 'vizualizar(' + resposta[i].codImovel +')');
       celulaAcoes.append(botaoVizualizar);
 
       let botaoExcluir = $('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('Deletar').attr('onclick', 'excluir(' + resposta[i].codImovel +')');
       celulaAcoes.append('  '); 
       celulaAcoes.append(botaoExcluir);
+
+      let botaoAlterar = $('<button></button>').attr('type', 'button').addClass('botao-tabela').addClass('botao').html('Alterar').attr('onclick', 'editar(' + resposta[i].codImovel +')');
+      celulaAcoes.append('  '); 
+      celulaAcoes.append(botaoAlterar);
 
       linha.append(celulaAcoes);
 
@@ -113,6 +104,7 @@ function excluir(codImovel) {
     contentType: 'application/json; charset=utf-8',
     data: JSON.stringify(codImovel),
     success: function(resposta) {
+      grid();
       alert(resposta);
     },
     error: function(erro, mensagem, excecao) {
@@ -209,5 +201,79 @@ function validarTipo(){
   return false;
 }
 
+function editar(codImovel){
+  $.get('https://localhost:5001/api/Imovel/Visualizar?codImovel='+codImovel)
+      .done(function(resposta) { 
+          $('#codImovel').val(resposta.codImovel);
+          $('#idNome').val(resposta.proprietario);
+          $('#idAno').val(resposta.ano);
+          $('#idData').val(resposta.dataAquisicao.substr(0, 10));
+          $('input:radio[name="tipo"]').filter(`[value="${resposta.tipo === 'Novo' ? 1 : 2}"]`).attr('checked', true);
+          $('#idMunicipio').val(resposta.municipio.idMunicipio);
+          $('#salvar span').text('EDITAR');
 
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+      })
+      .fail(function(erro, mensagem, excecao) { 
+          alert(mensagem + ': ' + excecao);
+      });
+}
 
+function salvar(){
+
+  var id;
+  var url;
+  var metodo;
+ 
+  if ($('#salvar span')[0].textContent === 'EDITAR'){
+    console.log('alterar')
+      id = +$('#codImovel').val();
+      metodo = 'PUT';
+      url = 'https://localhost:5001/api/Imovel/Alterar';
+  }
+  else{
+    console.log('cadastrar')
+
+      id = 0;
+      metodo = 'POST';
+      url = 'https://localhost:5001/api/Imovel/Cadastrar';
+  }
+  
+  let imovel = {
+    
+    codImovel: id,
+    proprietario : dados.proprietario.value,
+    ano: +dados.ano.value,
+    dataAquisicao: dados.data.value,
+    idMunicipio: +dados.municipio.value,
+    tipo:dados.tipo.value
+  };
+
+    console.log(imovel);
+  
+
+  $.ajax({
+      type: metodo,
+      url: url,
+      contentType: "application/json; charset=utf-8",
+      data: JSON.stringify(imovel),
+      success: function(resposta) { 
+        limparFormulario()
+        grid();
+        alert(resposta);
+      },
+      error: function(erro, mensagem, excecao) { 
+          alert(mensagem + ': ' + excecao);
+      }
+  });
+}
+
+function limparFormulario(){
+  $('#codImovel').val(0);
+  $('#idNome').val('');
+  $('#idAno').val('');
+  $('#idData').val('');
+  $('#idMunicipio').val(0);
+  $('#salvar span').text('Salvar');
+  }

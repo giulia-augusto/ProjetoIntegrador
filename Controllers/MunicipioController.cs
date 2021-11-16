@@ -93,8 +93,10 @@ namespace CadastroImoveis.Controllers
         }
 
         [HttpPut]
-        public string Alterar([FromBody] Municipio municipio)
+        public string Alterar([FromBody] Municipio dados)
         {
+            _contexto.Update(dados);
+            _contexto.SaveChanges();
             return "Município alterado com sucessso";
         }
 
@@ -115,7 +117,23 @@ namespace CadastroImoveis.Controllers
                 return "Município deletado com sucesso!";
             }
         }
+
+        [HttpGet]
+        public MunicipioDTO Visualizar(int idMunicipio)
+        {
+            return _contexto.Municipio.Include(p => p.IdEstadoNavigation)
+            .Select(c => new MunicipioDTO 
+            { 
+                IdMunicipio = c.IdMunicipio,
+                Nome = c.Nome,
+                Populacao = c.Populacao,
+                Porte = c.Porte,
+                Estado = new EstadoDTO 
+                { 
+                    Id = c.IdEstadoNavigation.Id,
+                    Nome = c.IdEstadoNavigation.Nome 
+                } 
+            }).FirstOrDefault(p => p.IdMunicipio == idMunicipio);
+        }
     }   
-        
- 
 }

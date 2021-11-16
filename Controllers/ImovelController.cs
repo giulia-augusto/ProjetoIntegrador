@@ -81,8 +81,10 @@ namespace CadastroImoveis.Controllers
         }
 
         [HttpPut]
-        public string Alterar([FromBody] Imovel imovel)
+        public string Alterar([FromBody] Imovel dados)
         {
+            _contexto.Update(dados);
+            _contexto.SaveChanges();
             return "Imóvel alterado com sucesso!";
         }
 
@@ -102,5 +104,25 @@ namespace CadastroImoveis.Controllers
                 return "Imóvel deletado com sucesso!";
             }
         }
-    }   
+
+        [HttpGet]
+        public ImovelDTO Visualizar(int codImovel)
+        {
+            return _contexto.Imovel.Include(p => p.IdMunicipioNavigation)
+            .Select(c => new ImovelDTO 
+            { 
+                CodImovel = c.CodImovel,
+                Proprietario = c.Proprietario,
+                Ano = c.Ano,
+                DataAquisicao = c.DataAquisicao,
+                Tipo = c.Tipo,
+                Municipio = new MunicipioDTO 
+                { 
+                    IdMunicipio = c.IdMunicipioNavigation.IdMunicipio, 
+                    Nome = c.IdMunicipioNavigation.Nome 
+                } 
+            }).FirstOrDefault(p => p.CodImovel == codImovel);
+        }
+    }  
+
 }
