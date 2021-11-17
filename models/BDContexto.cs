@@ -137,6 +137,12 @@ namespace CadastroImoveis.Models
 
                 entity.Property(e => e.IdMunicipio).HasColumnName("idMunicipio");
 
+                entity.Property(e => e.Ativo)
+                    .IsRequired()
+                    .HasColumnName("ativo")
+                    .HasColumnType("bit(1)")
+                    .HasDefaultValueSql("b'1'");
+
                 entity.Property(e => e.IdEstado).HasColumnName("idEstado");
 
                 entity.Property(e => e.Nome)

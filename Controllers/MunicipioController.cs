@@ -28,7 +28,7 @@ namespace CadastroImoveis.Controllers
         {
             var municipio = _contexto.Municipio
                 .Include(c => c.IdEstadoNavigation)
-                .FirstOrDefault(c => c.IdMunicipio == idMunicipio);
+                .FirstOrDefault(c => c.IdMunicipio == idMunicipio && c.Ativo.Value);
             
             if (municipio == null)
             {
@@ -56,6 +56,7 @@ namespace CadastroImoveis.Controllers
         {
             return _contexto.Municipio
                 .Include(c => c.IdEstadoNavigation)
+                .Where(c => c.Ativo.Value)
                 .OrderBy(c => c.IdMunicipio)
                 .Select(c => new MunicipioDTO 
                 { 
@@ -76,6 +77,7 @@ namespace CadastroImoveis.Controllers
         public List<Municipio> Listar2()
         {
             return _contexto.Municipio
+                .Where(c => c.Ativo.Value)
                 .OrderBy(c => c.IdMunicipio)
                 .Select(c => new Municipio 
                 { 
@@ -95,6 +97,7 @@ namespace CadastroImoveis.Controllers
         [HttpPut]
         public string Alterar([FromBody] Municipio dados)
         {
+            dados.Ativo = true;
             _contexto.Update(dados);
             _contexto.SaveChanges();
             return "Município alterado com sucessso";
@@ -111,7 +114,9 @@ namespace CadastroImoveis.Controllers
             }
             else
             {
-                _contexto.Remove(dados);
+                // _contexto.Remove(dados);
+                dados.Ativo = false;
+                _contexto.Update(dados);
                 _contexto.SaveChanges();
             
                 return "Município deletado com sucesso!";
@@ -121,19 +126,22 @@ namespace CadastroImoveis.Controllers
         [HttpGet]
         public MunicipioDTO Visualizar(int idMunicipio)
         {
-            return _contexto.Municipio.Include(p => p.IdEstadoNavigation)
-            .Select(c => new MunicipioDTO 
-            { 
-                IdMunicipio = c.IdMunicipio,
-                Nome = c.Nome,
-                Populacao = c.Populacao,
-                Porte = c.Porte,
-                Estado = new EstadoDTO 
+            return _contexto.Municipio
+                .Include(p => p.IdEstadoNavigation)
+                .Where(c => c.Ativo.Value)
+                .Select(c => new MunicipioDTO 
                 { 
-                    Id = c.IdEstadoNavigation.Id,
-                    Nome = c.IdEstadoNavigation.Nome 
-                } 
-            }).FirstOrDefault(p => p.IdMunicipio == idMunicipio);
+                    IdMunicipio = c.IdMunicipio,
+                    Nome = c.Nome,
+                    Populacao = c.Populacao,
+                    Porte = c.Porte,
+                    Estado = new EstadoDTO 
+                    { 
+                        Id = c.IdEstadoNavigation.Id,
+                        Nome = c.IdEstadoNavigation.Nome 
+                    } 
+                })
+                .FirstOrDefault(p => p.IdMunicipio == idMunicipio);
         }
     }   
 }
